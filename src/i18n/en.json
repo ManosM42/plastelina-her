@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+"slide1": { "heading": "Good mornings start here", "sub": "Brunch · Coffee · Good Vibes · Heraklion" },
+"slide2": { "heading": "Handcrafted brunch, made with passion", "sub": "From noon to midnight" },
+"slide3": { "heading": "13 years in the heart of Heraklion", "sub": "Plastelina Coffee & Cocktail Crafts" },
+"slide4": { "heading": "The coffee that deserves your moment", "sub": "Specialty coffee by Cortese Caffè" },
+"slide5": { "heading": "Every dish served with love", "sub": "Fresh ingredients, attentive service, every single day" }
+  },
+  "gallery": { "title": "Our Space" },
+  "highlights": {
+    "title": "Taste the moment",
+    "brunch": { "name": "Brunch", "desc": "Every day until 16:00" },
+    "sweets": { "name": "Sweets & Pancakes", "desc": "Homemade flavours" },
+    "cocktails": { "name": "Cocktails", "desc": "From 13:00 to midnight" },
+    "cta": "View Full Menu"
+  },
+  "reviews": { "title": "What our guests say" },
+  "findus": { "title": "Find Us" },
+  "footer": { "tagline": "Coffee & Cocktail Crafts · Heraklion, Crete", "rights": "All rights reserved." },
+  "menu": {
+    "note": "Please inform staff of any allergies.",
+    "tabs": {
+      "brunch": "Brunch",
+      "openToast": "Open Toast",
+      "pancakes": "Pancakes",
+      "omelettes": "Omelettes",
+      "salads": "Salads",
+      "pasta": "Pasta / Risotto",
+      "burgers": "Burgers",
+      "main": "Main",
+      "pinsa": "Pinsa",
+      "yogurt": "Yogurt & Bowls",
+      "smoothies": "Smoothies",
+      "street": "Street Food",
+      "bagels": "Bagels",
+      "desserts": "Desserts",
+      "coffee": "Coffee",
+      "drinks": "Drinks & Beers",
+      "wine": "Wine List"
+    }
+  },
+  "experience": {
+    "heroTitle": "More than a café. A feeling.",
+    "aboutTitle": "A story crafted over time",
+    "aboutText": "Plastelina has been a landmark in the heart of Heraklion since 2011. Born from a love of great coffee, honest food, and warm hospitality, it has grown into the city's favourite all-day spot — from morning brunch to late-night cocktails. The stone walls, warm light, and the scent of fresh coffee tell a story of 13 years of crafted moments.",
+    "atmosphereTitle": "An atmosphere of its own",
+    "stat1": { "value": "13 Years", "label": "In the heart of Heraklion" },
+    "stat2": { "value": "All Day", "label": "From 9:00 to midnight" },
+    "stat3": { "value": "100% Craft", "label": "Coffee & Cocktails" }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressLabel": "Address",
+    "address": "Heraklion, Crete",
+    "hours": "Opening Hours",
+    "days": {
+      "mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday",
+      "fri": "Friday", "sat": "Saturday", "sun": "Sunday"
+    }
+  }
+}

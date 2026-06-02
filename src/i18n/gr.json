@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Αρχική",
+    "menu": "Μενού",
+    "experience": "Experience",
+    "contact": "Επικοινωνία"
+  },
+  "hero": {
+"slide1": { "heading": "Καλημέρες που ξεκινούν εδώ", "sub": "Brunch · Καφές · Καλές Στιγμές · Ηράκλειο" },
+"slide2": { "heading": "Χειροποίητα brunch, φτιαγμένα με μεράκι", "sub": "Από το μεσημέρι έως τα μεσάνυχτα" },
+"slide3": { "heading": "13 χρόνια στην καρδιά του Ηρακλείου", "sub": "Plastelina Coffee & Cocktail Crafts" },
+"slide4": { "heading": "Ο καφές που αξίζει τη στιγμή σου", "sub": "Specialty καφέδες από Cortese Caffè" },
+"slide5": { "heading": "Κάθε πιάτο σερβίρεται με αγάπη", "sub": "Φρέσκα υλικά, προσεγμένο σερβίρισμα, κάθε μέρα" }
+  },
+  "gallery": { "title": "Ο Χώρος μας" },
+  "highlights": {
+    "title": "Γεύσου τη στιγμή",
+    "brunch": { "name": "Brunch", "desc": "Κάθε μέρα έως τις 16:00" },
+    "sweets": { "name": "Γλυκά & Pancakes", "desc": "Σπιτικές γεύσεις" },
+    "cocktails": { "name": "Cocktails", "desc": "Από τις 13:00 έως τα μεσάνυχτα" },
+    "cta": "Δες το Πλήρες Μενού"
+  },
+  "reviews": { "title": "Τι λένε οι επισκέπτες μας" },
+  "findus": { "title": "Βρες μας" },
+  "footer": { "tagline": "Coffee & Cocktail Crafts · Ηράκλειο, Κρήτη", "rights": "Με την επιφύλαξη παντός δικαιώματος." },
+  "menu": {
+    "note": "Ενημερώστε το προσωπικό για τυχόν αλλεργίες.",
+    "tabs": {
+      "brunch": "Brunch",
+      "openToast": "Open Toast",
+      "pancakes": "Pancakes",
+      "omelettes": "Ομελέτες",
+      "salads": "Σαλάτες",
+      "pasta": "Ζυμαρικά / Ριζότο",
+      "burgers": "Burgers",
+      "main": "Κυρίως",
+      "pinsa": "Pinsa",
+      "yogurt": "Γιαούρτι & Bowls",
+      "smoothies": "Smoothies",
+      "street": "Street Food",
+      "bagels": "Bagels",
+      "desserts": "Επιδόρπια",
+      "coffee": "Καφές",
+      "drinks": "Αναψυκτικά & Μπύρες",
+      "wine": "Κατάλογος Κρασιών"
+    }
+  },
+  "experience": {
+    "heroTitle": "Περισσότερο από ένα café. Ένα συναίσθημα.",
+    "aboutTitle": "Μια ιστορία φτιαγμένη με τον χρόνο",
+    "aboutText": "Η Plastelina αποτελεί σημείο αναφοράς στην καρδιά του Ηρακλείου από το 2011. Γεννήθηκε από αγάπη για τον καλό καφέ, την ειλικρινή κουζίνα και τη ζεστή φιλοξενία, και εξελίχθηκε στο αγαπημένο all-day στέκι της πόλης — από το πρωινό brunch έως τα cocktails τα βράδια. Οι πέτρινοι τοίχοι, το ζεστό φως και η μυρωδιά φρέσκου καφέ αφηγούνται 13 χρόνια φτιαγμένων στιγμών.",
+    "atmosphereTitle": "Μια ατμόσφαιρα ξεχωριστή",
+    "stat1": { "value": "13 Χρόνια", "label": "Στην καρδιά του Ηρακλείου" },
+    "stat2": { "value": "Όλη μέρα", "label": "Από 9:00 έως τα μεσάνυχτα" },
+    "stat3": { "value": "100% Craft", "label": "Coffee & Cocktails" }
+  },
+  "contact": {
+    "title": "Επικοινωνία",
+    "phoneLabel": "Τηλέφωνο",
+    "emailLabel": "Email",
+    "addressLabel": "Διεύθυνση",
+    "address": "Ηράκλειο, Κρήτη",
+    "hours": "Ώρες Λειτουργίας",
+    "days": {
+      "mon": "Δευτέρα", "tue": "Τρίτη", "wed": "Τετάρτη", "thu": "Πέμπτη",
+      "fri": "Παρασκευή", "sat": "Σάββατο", "sun": "Κυριακή"
+    }
+  }
+}
