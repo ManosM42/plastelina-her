@@ -26,7 +26,12 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // ✅ Close menu and lock/unlock body scroll
   useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   const toggleLang = () => {
     const next = i18n.language === "en" ? "gr" : "en";
@@ -38,25 +43,23 @@ export function Navbar() {
 
   return (
     <>
-      {/* Google Fonts — Cormorant Garamond for the brand name */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap"
-        rel="stylesheet"
-      />
-
+      {/* ✅ Fonts now loaded from index.html — removed duplicate <link> tags here */}
       <style>{`
         .brand-name {
           font-family: 'Cormorant Garamond', serif;
           font-weight: 300;
-          font-size: 1.55rem;
+          font-size: 1.35rem;
           letter-spacing: 0.18em;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
           color: transparent;
           transition: background-image 0.4s ease;
+        }
+        /* ✅ Slightly smaller on very small screens */
+        @media (max-width: 360px) {
+          .brand-name { font-size: 1.15rem; letter-spacing: 0.12em; }
+          .brand-sub  { font-size: 0.52rem; letter-spacing: 0.18em; }
         }
         .brand-name.solid {
           background-image: linear-gradient(135deg, #a8823f 0%, #c9a96e 50%, #a8823f 100%);
@@ -79,27 +82,27 @@ export function Navbar() {
 
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          solid ? "bg-cream/95 backdrop-blur-md shadow-[0_1px_0_0_var(--color-border)]" : "bg-transparent"
+          solid
+            ? "bg-cream/95 backdrop-blur-md shadow-[0_1px_0_0_var(--color-border)]"
+            : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
+        {/* ✅ Reduced height on mobile (h-16 vs h-20) */}
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10 flex items-center justify-between h-16 md:h-20">
 
-          {/* ── Logo + Brand name ── */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <img
-                src={logo}
-                alt="Plastelina"
-                className="h-12 w-auto rounded-full transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  boxShadow: solid
-                    ? "0 0 0 1.5px rgba(201,169,110,0.35)"
-                    : "0 0 0 1.5px rgba(201,169,110,0.5)",
-                }}
-              />
-            </div>
-
-            {/* Brand name — plain span, no motion, gradient via CSS class only */}
+          {/* ── Logo + Brand ── */}
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+            <img
+              src={logo}
+              alt="Plastelina"
+              // ✅ Smaller logo on mobile
+              className="h-9 md:h-12 w-auto rounded-full transition-transform duration-500 group-hover:scale-105"
+              style={{
+                boxShadow: solid
+                  ? "0 0 0 1.5px rgba(201,169,110,0.35)"
+                  : "0 0 0 1.5px rgba(201,169,110,0.5)",
+              }}
+            />
             <div className="flex flex-col leading-none select-none">
               <span className={`brand-name ${solid ? "solid" : "light"}`}>
                 PLASTELINA
@@ -139,7 +142,7 @@ export function Navbar() {
           </nav>
 
           {/* ── Right controls ── */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <button
               onClick={toggleLang}
               className={`hidden md:inline-flex items-center rounded-full border px-4 py-1.5 text-xs font-medium tracking-wider transition ${
@@ -150,12 +153,17 @@ export function Navbar() {
             >
               {i18n.language === "en" ? "EN  ·  ΕΛ" : "ΕΛ  ·  EN"}
             </button>
+
+            {/* ✅ Larger tap target for hamburger */}
             <button
-              className={`md:hidden p-2 ${solid ? "text-charcoal" : "text-cream"}`}
+              className={`md:hidden p-2 rounded-md transition-colors active:bg-black/10 ${
+                solid ? "text-charcoal" : "text-cream"
+              }`}
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
+              aria-expanded={open}
             >
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -167,7 +175,7 @@ export function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
               className="md:hidden overflow-hidden bg-cream border-t border-border"
             >
               <div className="px-6 py-4 flex flex-col gap-1">
@@ -175,19 +183,23 @@ export function Navbar() {
                   <Link
                     key={item.to}
                     to={item.to}
-                    className="py-3 text-charcoal text-base font-medium hover:text-amber"
+                    // ✅ Bigger tap targets (py-4) and active:bg for touch feedback
+                    className="py-4 text-charcoal text-base font-medium hover:text-amber active:bg-taupe/10 rounded-md px-2 transition-colors"
                     activeProps={{ className: "text-amber" }}
                     activeOptions={{ exact: item.to === "/" }}
                   >
                     {t(item.key)}
                   </Link>
                 ))}
-                <button
-                  onClick={toggleLang}
-                  className="mt-2 self-start rounded-full border border-charcoal/20 px-4 py-1.5 text-xs tracking-wider"
-                >
-                  {i18n.language === "en" ? "EN  ·  ΕΛ" : "ΕΛ  ·  EN"}
-                </button>
+
+                <div className="mt-3 pt-3 border-t border-border flex items-center justify-between">
+                  <button
+                    onClick={toggleLang}
+                    className="rounded-full border border-charcoal/20 px-4 py-2 text-xs tracking-wider active:bg-taupe/10 transition-colors"
+                  >
+                    {i18n.language === "en" ? "EN  ·  ΕΛ" : "ΕΛ  ·  EN"}
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}

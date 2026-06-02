@@ -19,41 +19,68 @@ function TripAdvisorIcon({ size = 20 }: { size?: number }) {
 
 export function Footer() {
   const { t } = useTranslation();
+
+  const socials = [
+    {
+      href: "https://www.instagram.com/plastelina_her/?hl=el",
+      label: "Instagram",
+      icon: <Instagram size={22} />,
+    },
+    {
+      href: "https://www.facebook.com/plastelina.gr/?locale=el_GR",
+      label: "Facebook",
+      icon: <Facebook size={22} />,
+    },
+    {
+      href: "https://www.tripadvisor.com.gr/Restaurant_Review-g189417-d12280191-Reviews-Plastelina-Heraklion_Crete.html",
+      label: "TripAdvisor",
+      icon: <TripAdvisorIcon size={22} />,
+    },
+  ];
+
   return (
     <footer className="bg-charcoal text-cream">
-      <div className="mx-auto max-w-7xl px-6 py-16 flex flex-col items-center text-center gap-6">
-        <img src={logo} alt="Plastelina" className="h-16 w-auto invert" />
-        <p className="text-sm tracking-wide text-cream/80">{t("footer.tagline")}</p>
-        <div className="flex items-center gap-5">
-          <a
-            href="https://www.instagram.com/plastelina_her/?hl=el"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="text-cream/70 hover:text-amber transition"
-          >
-            <Instagram size={20} />
-          </a>
-          <a
-            href="https://www.facebook.com/plastelina.gr/?locale=el_GR"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="text-cream/70 hover:text-amber transition"
-          >
-            <Facebook size={20} />
-          </a>
-          <a
-            href="https://www.tripadvisor.com.gr/Restaurant_Review-g189417-d12280191-Reviews-Plastelina-Heraklion_Crete.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TripAdvisor"
-            className="text-cream/70 hover:text-amber transition"
-          >
-            <TripAdvisorIcon size={20} />
-          </a>
+      <div className="mx-auto max-w-7xl px-6 py-14 md:py-16 flex flex-col items-center text-center gap-6">
+
+        <img
+          src={logo}
+          alt="Plastelina"
+          className="h-14 md:h-16 w-auto rounded-full"
+          style={{
+            boxShadow: "0 0 0 1.5px rgba(201,169,110,0.35)",
+            opacity: 0.9,
+          }}
+        />
+
+        <p className="text-sm tracking-wide text-cream/75 max-w-xs md:max-w-none">
+          {t("footer.tagline")}
+        </p>
+
+        <div className="flex items-center gap-2">
+          {socials.map(({ href, label, icon }) => (
+            
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="flex items-center justify-center w-11 h-11 rounded-full text-cream/60 hover:text-amber active:scale-95 transition-all duration-200"
+              style={{ WebkitTapHighlightColor: "transparent" }}
+            >
+              {icon}
+            </a>
+          ))}
         </div>
-        <p className="text-xs text-cream/50 mt-4">© {new Date().getFullYear()} Plastelina. {t("footer.rights")}</p>
+
+        <div
+          className="w-16 h-px"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(201,169,110,0.4), transparent)" }}
+        />
+
+        <p className="text-xs text-cream/40">
+          © {new Date().getFullYear()} Plastelina. {t("footer.rights")}
+        </p>
       </div>
     </footer>
   );
