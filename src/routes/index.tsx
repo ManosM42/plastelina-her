@@ -13,6 +13,7 @@ import cocktailsImg from "@/assets/cocktails.jpg";
 import slider3Img from "@/assets/slider-3.jpg";
 import slider4Img from "@/assets/slider-4.jpg";
 import slider5Img from "@/assets/slider-5.jpg";
+import { FramedAnimation } from "@/components/FramedAnimation";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -123,6 +124,9 @@ function Home() {
     <main>
       {/* ── Hero ── */}
       <HeroSlider />
+
+      {/* Framed Animation */}
+      <FramedAnimation /> 
 
       {/* ── Gallery  /  slider-3 bg ── */}
       <ParallaxSection img={slider3Img} overlayOpacity={0.58} className="py-28 md:py-36">

@@ -91,3 +91,18 @@
   .font-serif { font-family: var(--font-serif); }
   .font-sans { font-family: var(--font-sans); }
 }
+/* The pinned element needs to sit flush at the top */
+.framed-animation-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove default body margin/padding that would offset the pin */
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: auto; /* was: smooth — breaks ScrollTrigger scrub */
+}
